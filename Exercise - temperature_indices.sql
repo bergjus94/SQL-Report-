@@ -1,4 +1,4 @@
--- calculating mean temperature for the whole time series
+-- calculating mean temperature for the whole time series t_avg
 
 DROP VIEW IF EXISTS mean_temperature;
 CREATE VIEW mean_temperature AS
