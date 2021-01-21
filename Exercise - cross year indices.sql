@@ -1,7 +1,8 @@
 -- calculating the correlation from this years time series to the time series of 
--- the clostest station from 2020 and 2019
+-- the clostest HOBO from 2020 and 2019
 
---Creating View from metadata with columns for the meta_id of the clostest stations in year 2019 an 20
+--Creating View from metadata with columns for the meta_id of the clostest stations in year 2019 an 2020
+
 DROP VIEW IF EXISTS meta_distance CASCADE;
 CREATE VIEW meta_distance AS
 WITH meta_distance AS (
@@ -15,7 +16,7 @@ SELECT *
 FROM meta_distance;
 
 
--- ordering the time series from 1 to ... because dates of different years time series are not the same, 
+-- ordering the time series from 1 to ... because dates of different time series are not the same, 
 -- but we still want to correlate all values
 
 DROP VIEW IF EXISTS data_norm;
@@ -28,8 +29,7 @@ SELECT
 FROM data;
 SELECT * FROM data_norm;
 
--- calculating the correlation with the clostest device from year 2020 and year 2019
-
+-- calculating the correlation with the clostest HOBO device from year 2020 and year 2019
 
 DROP VIEW IF EXISTS corr_table CASCADE;
 CREATE VIEW corr_table AS  
